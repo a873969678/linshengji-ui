@@ -5,8 +5,8 @@
 
 ## 使用方法
 <div>
- <p>import { LinshengjiCode } from 'lsj-code'</p >
- <p>import 'lsj-code/lib/linshengji.css'</p >
+ <p>import { LinshengjiCode } from 'linshengji-ui'</p >
+ <p>import 'linshengji-ui/lib/linshengji.css'</p >
  <p><codes /></p >
 </div>
 <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo.png">
