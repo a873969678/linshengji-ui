@@ -69,10 +69,11 @@ watermark.set = (str, idName) => {
       document.getElementById(id).className = ''
     }
   }, 1000)
-  window.onresize = () => {
-    // 屏幕变化进行重绘
-    setWatermark(str, idName)
-  }
+  window.addEventListener('resize', () => { // 执行
+    // 屏幕缩小放大时，重新获取高度
+    style.width = document.getElementById(idName).clientWidth + 'px'
+    style.height = document.getElementById(idName).clientHeight + 'px'
+  })
 }
 
 export default watermark
