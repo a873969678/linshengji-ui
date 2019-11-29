@@ -1,12 +1,13 @@
 <template>
-  <div>
+  <div id="app">
     <LinshengjiCode :success="success" />
   </div>
 </template>
 
 <script>
-import { LinshengjiCode } from 'lsj-code'
-import 'lsj-code/lib/linshengji.css' // npm包调试
+import { LinshengjiCode } from 'linshengji-ui'
+import { warterMark } from 'linshengji-ui'
+import 'linshengji-ui/lib/linshengji.css' // npm包调试
 export default {
   components: {
     LinshengjiCode
@@ -16,8 +17,8 @@ export default {
 
     }
   },
-  created() {
-
+  mounted() {
+    warterMark.set('水印', 'app')
   },
   methods: {
     success(type) {

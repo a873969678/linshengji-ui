@@ -1,5 +1,5 @@
 <template>
-  <div class="codeY">
+  <div class="linshengji-code">
     <div class="container">
       <div id="captcha" />
       <div id="msg"/>
@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  name:'Linshengjicode',
+  name:'LinshengjiCode',
   props: {
     success: {
       type: Function,
@@ -147,7 +147,7 @@ export default {
             const slider = createElement('div')
             const sliderIcon = createElement('span')
             const text = createElement('span')
-            const codeY = document.getElementsByClassName('codeY')[0]
+            const codeY = document.getElementsByClassName('linshengji-code')[0]
             codeY.style.cssText = `width:${that.width}px;position: relative`
             block.className = 'block'
             sliderContainer.className = 'sliderContainer'
@@ -334,7 +334,7 @@ export default {
 }
 </script>
 <style lang='scss'>
-.codeY {
+.linshengji-code {
     .container {
         width: 100%;
         margin-bottom: 10px;
