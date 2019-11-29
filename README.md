@@ -1,19 +1,23 @@
-# 组件库
+# 组件库下载
 <p>1.cnpm i linshengji-ui -S</p >
 
 # 全局引用组件
-<p>main.js文件中</p>
+## main.js文件中
 <p>import linshengjiUI from 'linshengji-ui' </p>
 <p>import 'linshengji-ui/lib/linshengji.css' </p>
 <p>Vue.use(linshengjiUI) </p>
 
 ## VUE文件中
-<p><LinshengjiCode /></p >
+<div>
+  <p><LinshengjiCode /></p >
+</div>
 
 
 # 按需引入
 
-# 验证码插件
+## 验证码插件
+
+<img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo.png">
 
 ## 使用方法
 <div>
@@ -21,7 +25,6 @@
  <p>import 'linshengji-ui/lib/linshengji.css'</p >
  <p><LinshengjiCode /></p >
 </div>
-<img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo.png">
 
 ## 组件参数
 <table>
@@ -67,7 +70,9 @@
   </tr>
 </table>
 
-# 水印插件
+## 水印插件
+<img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo1.png">
+
 ## 使用方法
 <div>
  <p>import { warterMark } from 'linshengji-ui'</p >
