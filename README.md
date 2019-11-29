@@ -15,7 +15,7 @@
 
 # 按需引入
 
-## 验证码插件
+## 1.验证码插件
 
 <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo.png">
 
@@ -70,7 +70,7 @@
   </tr>
 </table>
 
-## 水印插件
+## 2.水印插件
 <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo1.png">
 
 ## 使用方法
