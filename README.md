@@ -77,7 +77,7 @@
 <div>
  <p>import { warterMark } from 'linshengji-ui'</p >
  <p>mounted() {
-    warterMark.set('水印', 'app')
+    warterMark.set('水印', 'app', {fillStyle:'rgba(200, 200, 200, 0.20)'})
   }</p >
 </div>
 
@@ -90,21 +90,33 @@
     <th>可选值</th>
     <th>默认值</th>
     <th>回调参数</th>
+    <th>是否必传</th>
   </tr>
   <tr>
-    <td>name</th>
+    <td>str</th>
     <td>水印内容</th>
     <td>String</th>
     <td>任意</th>
     <td>--</th>
     <td>--</th>
+    <td>必传</th>
   </tr>
   <tr>
-    <td>idDom</th>
+    <td>idName</th>
     <td>id节点</th>
     <td>String</th>
     <td>id名称</th>
     <td>--</th>
     <td>--</th>
+    <td>必传</th>
+  </tr>
+  <tr>
+    <td>styleCss</th>
+    <td>额外参数</th>
+    <td>JSON</th>
+    <td>{width:'小水印宽度', height:'小水印高度' rotate:'旋转角度', fontSize:'字体大小', fillStyle:'字体填充颜色'}</th>
+    <td>{width:150, height:120, rotate:-20, fontSize:20, fillStyle:'rgba(200, 200, 200, 0.20)'}</th>
+    <td>--</th>
+    <td>非必传</th>
   </tr>
 </table>

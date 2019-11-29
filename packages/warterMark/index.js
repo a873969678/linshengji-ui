@@ -2,7 +2,7 @@
 const watermark = {}
 
 // 设置水印的属性
-const setWatermark = (str, idName) => {
+const setWatermark = (str, idName, styleCss) => {
   const id = 'water-mark-js' // 给一个ID
 
   if (document.getElementById(idName) === null) {
@@ -14,14 +14,16 @@ const setWatermark = (str, idName) => {
   }
 
   const can = document.createElement('canvas') // 创建canvas
-  can.width = 150 // 每一个小水印宽度
-  can.height = 120 // 每一个小水印高度
+  can.width = styleCss ? styleCss.width || 150 : 150 // 每一个小水印宽度
+  can.height = styleCss ? styleCss.height || 120 : 120 // 每一个小水印高度
 
   const cans = can.getContext('2d') // 2d绘画
-  cans.rotate(-20 * Math.PI / 180) // 水印旋转
-  cans.font = '20px Vedana' // 字体
-  cans.fillStyle = 'rgba(200, 200, 200, 0.20)' // 设置填充绘画的颜色、渐变或者模式
-  cans.textAlign = 'left' // 设置文本内容的当前对齐方式
+  const rotate = styleCss ? styleCss.rotate || -20 : -20
+  cans.rotate(rotate * Math.PI / 180) // 水印旋转
+
+  cans.font = `${styleCss ? styleCss.fontSize || 20 : 20}px Vedana` // 字体
+  cans.fillStyle = `${styleCss ? styleCss.fillStyle || 'rgba(200, 200, 200, 0.20)' : 'rgba(200, 200, 200, 0.20)'}` // 设置填充绘画的颜色、渐变或者模式
+  cans.textAlign = `left` // 设置文本内容的当前对齐方式
   cans.textBaseline = 'Middle' // 设置在绘制文本时使用的当前文本基线
   cans.fillText(str, can.width / 3, can.height / 2) // 在画布上绘制填色的文本（输出的文本，开始绘制文本的X坐标位置，开始绘制文本的Y坐标位置）
 
@@ -45,8 +47,8 @@ const setWatermark = (str, idName) => {
 }
 
 // 该方法只允许调用一次
-watermark.set = (str, idName) => {
-  const dom = setWatermark(str, idName)
+watermark.set = (str, idName, styleCss) => {
+  const dom = setWatermark(str, idName, styleCss)
   if (!dom) {
     return false
   }
@@ -58,7 +60,7 @@ watermark.set = (str, idName) => {
     }
     // 防止被人通过控制台删除，定时检查是否存在水印
     if (document.getElementById(id) === null) {
-      setWatermark(str, idName)
+      setWatermark(str, idName, styleCss)
     } else {
       // 防止别人通过控制台设置css样式修改而复制页面
       document.getElementById(id).style = ''
