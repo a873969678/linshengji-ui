@@ -11,19 +11,19 @@ export default {
   name:'LinshengjiCode',
   props: {
     success: {
-      type: Function,
+      type: Function, // 回调 type true验证成功 false验证失败
       default: () => {}
     },
     width: {
-      type: Number,
+      type: Number, // 验证码canvas宽度
       default: 300
     },
     height: {
-      type: Number,
+      type: Number,  // 验证码canvas高度
       default: 150
     },
     title: {
-      type: String,
+      type: String, // 滑块文字
       default: '向右滑动滑块填充拼图'
     }
   },
@@ -31,7 +31,7 @@ export default {
     return {}
   },
   mounted() {
-    this.start()
+    this.start() // 绘制canvas
   },
   methods: {
     resets() {
@@ -57,32 +57,38 @@ export default {
         function getRandomNumberByRange(start, end) {
           return Math.round(Math.random() * (end - start) + start)
         }
+        // 创建vanvas
         function createCanvas(width, height) {
           const canvas = createElement('canvas')
           canvas.width = width
           canvas.height = height
           return canvas
         }
+        // 创建图片
         function createImg(onload) {
           const img = createElement('img')
-          img.crossOrigin = 'Anonymous'
+          img.crossOrigin = 'Anonymous' // 允许跨域请求图片 但需要服务器端也同意
           img.onload = onload
-          img.onerror = () => {
-            img.src = getRandomImg()
+          img.onerror = () => {      // 如果错误
+            img.src = getRandomImg() // 获取随机底图
           }
-          img.src = getRandomImg()
+          img.src = getRandomImg() // 获取随机底图
           return img
         }
         function createElement(tagName) {
+          // 创建节点
           return document.createElement(tagName)
         }
         function addClass(tag, className) {
+          // 添加类名
           tag.classList.add(className)
         }
         function removeClass(tag, className) {
+          // 删除类名
           tag.classList.remove(className)
         }
         function getRandomImg() {
+          // 获取随机底图
           const arr = [
             'https://picsum.photos/300/150/?image=1001',
             'https://picsum.photos/300/150/?image=1002',
@@ -120,23 +126,25 @@ export default {
           ctx.fill()
         }
         function sum(x, y) {
+          // 去合
           return x + y
         }
         function square(x) {
+          // 求2次方
           return x * x
         }
         class jigsaw {
           constructor({ el, onSuccess, onFail, onRefresh }) {
-            this.el = el
-            this.onSuccess = onSuccess
-            this.onFail = onFail
-            this.onRefresh = onRefresh
+            this.el = el // 节点
+            this.onSuccess = onSuccess // 成功回调
+            this.onFail = onFail // 失败回调
+            this.onRefresh = onRefresh // 重置回调
           }
           init() {
-            this.initDOM()
-            this.initImg()
-            this.draw()
-            this.bindEvents()
+            this.initDOM() // 节点初始化
+            this.initImg() // 图片绘制初始化
+            this.draw() // // 随机创建滑块的位置
+            this.bindEvents() // 绑定各种事件
           }
           initDOM() {
             const canvas = createCanvas(w, h) // 画布
