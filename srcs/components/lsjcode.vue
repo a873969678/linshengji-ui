@@ -1,61 +1,76 @@
 <template>
-  <div id="water-mark">
-        <div style="width:15%;float:left;" class="left-menu">
-          <h3>开发指南</h3>
-          <p><a href="#组件库下载">组件库下载</a></p>
-          <p><a href="#全局引用组件">全局引用组件</a></p>
-          <h3>组件</h3>
-          <p><a href="#验证码">验证码</a></p>
-          <h3>封装方法</h3>
-          <p><a href="#水印">水印</a></p>
-          <h3>链接</h3>
-          <p><a href="https://github.com/a873969678/linshengji-ui">git仓库地址</a></p>
-        </div>
-        <div style="width:75%;float:left;padding:0 10px" class="right-menu">
-          <div id="组件库下载">
-    
-            <h2>组件库下载</h2>
-            <p class="hljs">cnpm i linshengji-ui -S</p>
-            <p class="tip">我们建议使用 CDN 引入 linshengji-ui 的用户在链接地址上锁定版本，以免将来 linshengji-ui 升级时受到非兼容性更新的影响</p>
-          </div>
-          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
-          <div id="全局引用组件">
-            <h2>全局引用组件</h2>
-            <p>main.js文件中</p>
-            <div class="hljs">
-              <p>import linshengjiUI from 'linshengji-ui' </p>
-              <p>import 'linshengji-ui/lib/linshengji.css' </p>
-              <p>Vue.use(linshengjiUI) </p>
-            </div>
-          </div>
-          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
-          <!-- 验证码 -->
-          <lsjcode /> 
-          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
-          <warterMark />
-        </div>
-      </div>
+  <div id="验证码" class="lsjcode">
+    <h2>验证码插件</h2>
+    <h3>使用方法</h3>
+    <div class="hljs">
+      <p>import { LinshengjiCode } from 'linshengji-ui'</p>
+      <p>import 'linshengji-ui/lib/linshengji.css'</p>
+    </div>
+    <p class="demo"><LinshengjiCode /></p>
+    <h3>组件参数</h3>
+    <table>
+      <tr>
+        <th>参数</th>
+        <th>说明</th>
+        <th>类型</th>
+        <th>可选值</th>
+        <th>默认值</th>
+        <th>回调参数</th>
+      </tr>
+      <tr>
+        <td>width</th>
+        </td><td>宽度</th>
+        </td><td>Number</th>
+        </td><td>>200</th>
+        </td><td>300</th>
+        </td><td>--</th>
+        </td></tr>
+      <tr>
+        <td>height</th>
+        </td><td>高度</th>
+        </td><td>Number</th>
+        </td><td>>100</th>
+        </td><td>150</th>
+        </td><td>--</th>
+        </td></tr>
+      <tr>
+        <td>title</th>
+        </td><td>拖拽条中的文字</th>
+        </td><td>String</th>
+        </td><td>任意字符</th>
+        </td><td>向右滑动滑块填充拼图</th>
+        </td><td>--</th>
+        </td></tr>
+      <tr>
+        <td>success</th>
+        </td><td>回调函数</th>
+        </td><td>Function(type)</th>
+        </td><td>--</th>
+        </td><td>--</th>
+        </td><td>true为验证成功,false为失败</th>
+        </td></tr>
+    </table>
+  </div>
 </template>
 
 <script>
-import lsjcode from './components/lsjcode.vue'
-import warterMark from './components/warterMark.vue'
+import { LinshengjiCode } from 'linshengji-ui'
+import 'linshengji-ui/lib/linshengji.css' // npm包调试
 export default {
   components: {
-    lsjcode,
-    warterMark
+    LinshengjiCode
   },
   data() {
     return {
 
     }
   },
-  mounted() {
-  },
+  methods: {
+  }
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
+
   body{
     width:80%;
     margin: 0 auto;
