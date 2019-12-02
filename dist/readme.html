@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>linshengji-ui</title>
+</head>
+<body>
+    <div>
+        <div style="width:15%;float:left;" class="left-menu">
+          <h3>开发指南</h3>
+          <p><a href="#组件库下载">组件库下载</a></p>
+          <p><a href="#全局引用组件">全局引用组件</a></p>
+          <h3>组件</h3>
+          <p><a href="#验证码">验证码</a></p>
+          <h3>封装方法</h3>
+          <p><a href="#水印">水印</a></p>
+          <h3>链接</h3>
+          <p><a href="https://github.com/a873969678/linshengji-ui">git仓库地址</a></p>
+        </div>
+        <div style="width:75%;float:left;padding:0 10px" class="right-menu">
+          <div id="组件库下载">
+    
+            <h2>组件库下载</h2>
+            <p class="hljs">cnpm i linshengji-ui -S</p>
+            <p class="tip">我们建议使用 CDN 引入 linshengji-ui 的用户在链接地址上锁定版本，以免将来 linshengji-ui 升级时受到非兼容性更新的影响</p>
+          </div>
+          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
+          <div id="全局引用组件">
+            <h2>全局引用组件</h2>
+            <p>main.js文件中</p>
+            <div class="hljs">
+              <p>import linshengjiUI from 'linshengji-ui' </p>
+              <p>import 'linshengji-ui/lib/linshengji.css' </p>
+              <p>Vue.use(linshengjiUI) </p>
+            </div>
+          </div>
+          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
+          <div id="验证码">
+            <h2>验证码插件</h2>
+            <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo.png">
+            <h3>使用方法</h3>
+            <div class="hljs">
+              <p>import { LinshengjiCode } from 'linshengji-ui'</p>
+              <p>import 'linshengji-ui/lib/linshengji.css'</p>
+              <p><LinshengjiCode /></p>
+            </div>
+    
+            <h3>组件参数</h3>
+            <table>
+              <tr>
+                <th>参数</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>可选值</th>
+                <th>默认值</th>
+                <th>回调参数</th>
+              </tr>
+              <tr>
+                <td>width</th>
+                </td><td>宽度</th>
+                </td><td>Number</th>
+                </td><td>>200</th>
+                </td><td>300</th>
+                </td><td>--</th>
+                </td></tr>
+              <tr>
+                <td>height</th>
+                </td><td>高度</th>
+                </td><td>Number</th>
+                </td><td>>100</th>
+                </td><td>150</th>
+                </td><td>--</th>
+                </td></tr>
+              <tr>
+                <td>title</th>
+                </td><td>拖拽条中的文字</th>
+                </td><td>String</th>
+                </td><td>任意字符</th>
+                </td><td>向右滑动滑块填充拼图</th>
+                </td><td>--</th>
+                </td></tr>
+              <tr>
+                <td>success</th>
+                </td><td>回调函数</th>
+                </td><td>Function(type)</th>
+                </td><td>--</th>
+                </td><td>--</th>
+                </td><td>true为验证成功,false为失败</th>
+                </td></tr>
+            </table>
+          </div>
+          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
+          
+          <div id="水印">
+            <h2>水印插件</h2>
+            <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo1.png">
+            <h3>使用方法</h3>
+            <div class="hljs">
+              <p>import { warterMark } from 'linshengji-ui'</p>
+              <p>mounted() {
+                warterMark.set('水印', 'app', {fillStyle:'rgba(200, 200, 200, 0.20)'})
+                }</p>
+            </div>
+            <h3>方法参数 Param</h3>
+            <table>
+              <tr>
+                <th>参数</th>
+                <th>说明</th>
+                <th>类型</th>
+                <th>可选值</th>
+                <th>默认值</th>
+                <th>回调参数</th>
+                <th>是否必传</th>
+              </tr>
+              <tr>
+                <td>str</th>
+                </td><td>水印内容</th>
+                </td><td>String</th>
+                </td><td>任意</th>
+                </td><td>--</th>
+                </td><td>--</th>
+                </td><td>必传</th>
+                </td></tr>
+              <tr>
+                <td>idName</th>
+                </td><td>id节点</th>
+                </td><td>String</th>
+                </td><td>id名称</th>
+                </td><td>--</th>
+                </td><td>--</th>
+                </td><td>必传</th>
+                </td></tr>
+              <tr>
+                <td>styleCss</th>
+                </td><td>额外参数</th>
+                </td><td>JSON</th>
+                </td><td>{width:'小水印宽度', height:'小水印高度' rotate:'旋转角度', fontSize:'字体大小', fillStyle:'字体填充颜色'}</th>
+                </td><td>{width:150, height:120, rotate:-20, fontSize:20, fillStyle:'rgba(200, 200, 200, 0.20)'}</th>
+                </td><td>--</th>
+                </td><td>非必传</th>
+                </td></tr>
+            </table>
+          </div>
+        </div>
+      </div>
+</body>
+<style>
+  body{
+    width:80%;
+    margin: 0 auto;
+  }
+  .left-menu{
+    margin-top: 50px;
+    height: 100%;
+    overflow-x: auto;
+  }
+  .left-menu a{
+    display: block;
+    height: 40px;
+    color: #444;
+    line-height: 40px;
+    font-size: 14px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 400;
+    text-decoration: none;
+  }
+  .left-menu a:hover{
+    color: #409eff;
+  }
+  .right-menu{
+    margin-top: 50px;
+    color: #1f2f3d;
+  }
+  .hljs {
+    line-height: 1.8;
+    font-family: Menlo,Monaco,Consolas,Courier,monospace;
+    font-size: 12px;
+    padding: 18px 24px;
+    background-color: #fafafa;
+    border: 1px solid #eaeefb;
+    margin-bottom: 25px;
+    border-radius: 4px;
+    -webkit-font-smoothing: auto;
+  }
+  p{
+    font-size: 14px;
+    color: #5e6d82;
+    line-height: 1.5em;
+  }
+  .tip {
+    padding: 8px 16px;
+    background-color: #ecf8ff;
+    border-radius: 4px;
+    border-left: 5px solid #50bfff;
+    margin: 20px 0;
+  }
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    background-color: #fff;
+    font-size: 14px;
+    margin-bottom: 45px;
+    line-height: 1.5em;
+  }
+  table td:first-child, table th:first-child {
+    padding-left: 10px;
+  }
+  table th {
+    text-align: left;
+    white-space: nowrap;
+    color: #909399;
+    font-weight: 400;
+  }
+  table th {
+    border-bottom: 1px solid #dcdfe6;
+    padding: 15px;
+    max-width: 250px;
+  }
+  table td,table th {
+    border-bottom: 1px solid #dcdfe6;
+    padding: 15px;
+    max-width: 250px;
+  }
+  table td {
+    color: #606266;
+  }
+  </style>
+</html>
