@@ -1,21 +1,26 @@
-# 组件库下载
-<p>1.cnpm i linshengji-ui -S</p >
 
-# 全局引用组件
+<div style="width:20%;float:left;border-right:1px solid #EBEEF5;">
+<p><a href="#组件库下载">组件库下载</a></p>
+<p><a href="#全局引用组件">全局引用组件</a></p>
+<p><a href="#验证码">验证码</a></p>
+<p><a href="#水印">水印</a></p>
+</div>
+<div style="width:75%;float:left;padding:0 10px">
+<div id="组件库下载">
+
+## 组件库下载
+<p>1.cnpm i linshengji-ui -S</p >
+</div>
+<div id="全局引用组件">
+
 ## main.js文件中
 <p>import linshengjiUI from 'linshengji-ui' </p>
 <p>import 'linshengji-ui/lib/linshengji.css' </p>
 <p>Vue.use(linshengjiUI) </p>
-
-## VUE文件中
-<div>
-  <p><LinshengjiCode /></p >
 </div>
-
-
-# 按需引入
-
-## 1.验证码插件
+ <div id="验证码">
+ 
+## 验证码插件
 
 <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo.png">
 
@@ -69,8 +74,11 @@
     <td>true为验证成功,false为失败</th>
   </tr>
 </table>
-
-## 2.水印插件
+ </div>
+ 
+  <div id="水印">
+  
+  ## 水印插件
 <img src="https://raw.githubusercontent.com/a873969678/linshengji-code/master/src/assets/demo1.png">
 
 ## 使用方法
@@ -120,3 +128,5 @@
     <td>非必传</th>
   </tr>
 </table>
+  </div>
+</div>
