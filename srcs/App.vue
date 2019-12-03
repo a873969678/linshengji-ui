@@ -5,7 +5,8 @@
           <p><a href="#组件库下载">组件库下载</a></p>
           <p><a href="#全局引用组件">全局引用组件</a></p>
           <h3>组件</h3>
-          <p><a href="#验证码">验证码</a></p>
+          <p><a href="#验证码">拖拽验证码</a></p>
+          <p><a href="#button">Button</a></p>
           <h3>封装方法</h3>
           <p><a href="#水印">水印</a></p>
           <h3>链接</h3>
@@ -32,6 +33,9 @@
           <!-- 验证码 -->
           <lsjcode /> 
           <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
+          <lsjButtonDoC />
+          <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
+          <!-- 水印 -->
           <warterMark />
         </div>
       </div>
@@ -40,10 +44,12 @@
 <script>
 import lsjcode from './components/lsjcode.vue'
 import warterMark from './components/warterMark.vue'
+import lsjButtonDoC from './components/lsjButtonDoC.vue'
 export default {
   components: {
     lsjcode,
-    warterMark
+    warterMark,
+    lsjButtonDoC
   },
   data() {
     return {
@@ -68,6 +74,7 @@ export default {
     margin-top: 50px;
     height: 100%;
     overflow-x: auto;
+    position: fixed;
   }
   .left-menu a{
     display: block;
@@ -87,6 +94,7 @@ export default {
   .right-menu{
     margin-top: 50px;
     color: #1f2f3d;
+    margin-left: 15%;
   }
   .hljs {
     line-height: 1.8;

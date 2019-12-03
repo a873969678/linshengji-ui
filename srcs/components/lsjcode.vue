@@ -1,10 +1,11 @@
 <template>
   <div id="验证码" class="lsjcode">
-    <h2>验证码插件</h2>
+    <h2>拖拽验证码</h2>
     <h3>使用方法</h3>
     <div class="hljs">
       <p>import { LinshengjiCode } from 'linshengji-ui'</p>
       <p>import 'linshengji-ui/lib/linshengji.css'</p>
+      <p>{{ data }}</p>
     </div>
     <p class="demo"><LinshengjiCode /></p>
     <h3>组件参数</h3>
@@ -62,7 +63,7 @@ export default {
   },
   data() {
     return {
-
+      data:'<LinshengjiCode />'
     }
   },
   methods: {
