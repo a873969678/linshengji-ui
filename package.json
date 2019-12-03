@@ -10,7 +10,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "pub": "npm publish",
-    "lib": "vue-cli-service build --target lib --name linshengji --dest lib packages/index.js && npm pub"
+    "lib": "vue-cli-service build --target lib --name linshengji --dest lib packages/index.js && npm run build && npm pub"
   },
   "dependencies": {
     "linshengji-ui": "^1.3.8",
