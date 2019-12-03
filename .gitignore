@@ -14,3 +14,4 @@ lib/
 *.ntvs*
 *.njsproj
 *.sln
+sh.exe.stackdump
