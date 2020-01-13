@@ -1,10 +1,7 @@
 <template>
 <div>
-    <div id="水印" class="warterMark">
-      <h2>水印插件</h2>
-      <div class="hljs">
-        <p>案例见网站水印</p>
-      </div>
+    <div id="表格" class="table-demo">
+      <h2>表格</h2>
       <h3>使用方法</h3>
       <div class="hljs">
         <p>import { warterMark } from 'linshengji-ui'</p>
@@ -13,7 +10,7 @@
           }</p>
       </div>
       <h3>方法参数 Param</h3>
-      <table  class="table">
+      <table class="table">
         <tr>
           <th>参数</th>
           <th>说明</th>
@@ -56,7 +53,6 @@
 </template>
 
 <script>
-import { warterMark } from 'linshengji-ui'
 export default {
   data() {
     return {
@@ -64,11 +60,10 @@ export default {
     }
   },
   mounted() {
-    warterMark.set('linshengji-ui', 'water-mark')
   },
 }
 </script>
 
 <style rel="stylesheet/scss" lang="scss">
-  </style>
+</style>
 

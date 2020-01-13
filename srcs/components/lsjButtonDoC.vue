@@ -22,7 +22,7 @@
    <LinshengjiButton>警告按钮</LinshengjiButton>
    <LinshengjiButton size='small'>警告按钮</LinshengjiButton>
    <h3>组件参数</h3>
-    <table>
+    <table  class="table">
       <tr>
         <th>参数</th>
         <th>说明</th>

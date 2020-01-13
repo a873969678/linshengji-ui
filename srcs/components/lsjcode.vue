@@ -9,7 +9,7 @@
     </div>
     <p class="demo"><LinshengjiCode /></p>
     <h3>组件参数</h3>
-    <table>
+    <table class="table">
       <tr>
         <th>参数</th>
         <th>说明</th>

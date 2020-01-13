@@ -7,8 +7,8 @@
           <h3>组件</h3>
           <p><a href="#验证码">拖拽验证码</a></p>
           <p><a href="#button">Button</a></p>
-          <h3>封装方法</h3>
           <p><a href="#水印">水印</a></p>
+          <p><a href="#表格">表格</a></p>
           <h3>链接</h3>
           <p><a href="https://github.com/a873969678/linshengji-ui">git仓库地址</a></p>
         </div>
@@ -37,6 +37,8 @@
           <p style="border-bottom: 1px solid #dcdfe6;height:1px"></p>
           <!-- 水印 -->
           <warterMark />
+          <!-- 表格 -->
+          <table-demo />
         </div>
       </div>
 </template>
@@ -45,11 +47,13 @@
 import lsjcode from './components/lsjcode.vue'
 import warterMark from './components/warterMark.vue'
 import lsjButtonDoC from './components/lsjButtonDoC.vue'
+import tableDemo from './components/tableDemo.vue'
 export default {
   components: {
     lsjcode,
     warterMark,
-    lsjButtonDoC
+    lsjButtonDoC,
+    tableDemo
   },
   data() {
     return {
@@ -119,7 +123,7 @@ export default {
     border-left: 5px solid #50bfff;
     margin: 20px 0;
   }
-  table {
+  .table {
     border-collapse: collapse;
     width: 100%;
     background-color: #fff;
@@ -127,26 +131,26 @@ export default {
     margin-bottom: 45px;
     line-height: 1.5em;
   }
-  table td:first-child, table th:first-child {
+  .table td:first-child, .table th:first-child {
     padding-left: 10px;
   }
-  table th {
+  .table th {
     text-align: left;
     white-space: nowrap;
     color: #909399;
     font-weight: 400;
   }
-  table th {
+  .table th {
     border-bottom: 1px solid #dcdfe6;
     padding: 15px;
     max-width: 250px;
   }
-  table td,table th {
+  .table td,table th {
     border-bottom: 1px solid #dcdfe6;
     padding: 15px;
     max-width: 250px;
   }
-  table td {
+  .table td {
     color: #606266;
   }
   .demo{
